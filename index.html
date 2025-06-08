@@ -19,6 +19,7 @@
     .profile {
       text-align: center;
       margin-bottom: 2rem;
+      animation: fadein 1.2s ease-in-out;
     }
 
     .profile img {
@@ -43,6 +44,7 @@
       gap: 1rem;
       width: 100%;
       max-width: 400px;
+      animation: fadein 1.4s ease-in-out;
     }
 
     .link-button {
@@ -55,31 +57,48 @@
       color: white;
       font-size: 1.1rem;
       font-weight: bold;
-      transition: all 0.2s ease;
+      transition: all 0.25s ease;
+      box-shadow: 0 0 6px #00ccff20;
     }
 
     .link-button:hover {
       background: #00ccff;
       color: black;
       transform: scale(1.05);
+      box-shadow: 0 0 12px #00ccff80;
     }
 
-.footer {
-  margin-top: 3rem;
-  padding: 1.5rem;
-  text-align: center;
-  color: #aaa;
-  font-size: 0.95rem;
-  border-top: 1px solid #333;
-  animation: fadein 1.5s ease-in-out;
-}
+    .footer {
+      margin-top: 3rem;
+      padding: 1.5rem;
+      text-align: center;
+      color: #aaa;
+      font-size: 0.95rem;
+      border-top: 1px solid #333;
+      animation: fadein 1.6s ease-in-out;
+    }
 
-.footer a:hover {
-  color: #ffffff;
-  text-decoration: underline;
-}
+    .footer a {
+      color: #00ccff;
+      text-decoration: none;
+    }
 
+    .footer a:hover {
+      color: #ffffff;
+      text-decoration: underline;
+    }
 
+    @keyframes fadein {
+      from { opacity: 0; transform: translateY(10px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @media screen and (max-width: 500px) {
+      .link-button {
+        font-size: 1rem;
+        padding: 0.9rem;
+      }
+    }
   </style>
 </head>
 <body>
@@ -93,24 +112,21 @@
   <div class="links">
     <a class="link-button" href="https://github.com/dvaboi" target="_blank">💻 GitHub Projects</a>
     <a class="link-button" href="https://www.youtube.com/@FollowDVaBoi" target="_blank">📺 YouTube Channel</a>
-    <a class="link-button" href="https://www.fortnite.com/@miskomega" target="_blank">🎮 Replit Demos</a>
+    <a class="link-button" href="https://www.fortnite.com/@miskomega" target="_blank">🎮 Fortnite Content</a>
     <a class="link-button" href="https://kick.com/dvaboi" target="_blank">🎥 Live Stream</a>
-    <a class="link-button" href="https://www.paypal.com/paypalme/dvaboi" target="_blank">📘 Docs / Dev Logs</a>
-    <a class="link-button" href="https://www.paypal.com/paypalme/dvaboi" target="_blank">📘 Docs / Dev Logs</a>
+    <a class="link-button" href="https://www.paypal.com/paypalme/dvaboi" target="_blank">💸 Support / Dev Logs</a>
   </div>
 
-<div class="footer">
-  <p>
-    ⚡️ Built with ❤️ by <strong>DVaBoi</strong> | 💀 Powered by 
-    <a href="https://miskomega.com" target="_blank" style="color:#00ccff; text-decoration: none;"><strong>MiskOmega</strong></a>
-  </p>
-  <p>
-    📬 Contact: <a href="mailto:contact@miskomega.com" style="color:#00ccff; text-decoration: none;">contact@miskomega.com</a>
-  </p>
-  <p style="font-size: 0.8rem; color: #666;">© 2025 MiskOmega Productions. All rights reserved.</p>
-</div>
-
-
+  <div class="footer">
+    <p>
+      ⚡️ Built with ❤️ by <strong>DVaBoi</strong> | 💀 Powered by 
+      <a href="https://miskomega.com" target="_blank"><strong>MiskOmega</strong></a>
+    </p>
+    <p>
+      📬 Contact: <a href="mailto:contact@miskomega.com">contact@miskomega.com</a>
+    </p>
+    <p style="font-size: 0.8rem; color: #666;">© 2025 MiskOmega Productions. All rights reserved.</p>
+  </div>
 
 </body>
 </html>
