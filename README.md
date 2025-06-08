@@ -1,2 +1,2 @@
-# miskomega_links
-MiskOmega.com Links Page
+# miskomega_dvaboi
+DVaBoi Link Page
