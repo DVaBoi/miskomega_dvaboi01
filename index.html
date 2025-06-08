@@ -2,66 +2,180 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Adult Links Example</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Stormrider Links</title>
   <style>
     body {
-      background: #111;
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #0f0f0f, #1f1f1f);
       color: white;
-      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       padding: 2rem;
     }
-    .link-button {
-      display: block;
-      background: #222;
-      border: 2px solid #00ccff;
-      color: white;
-      text-decoration: none;
-      padding: 1rem;
-      margin: 0.5rem 0;
-      border-radius: 8px;
+
+    .profile {
       text-align: center;
-      cursor: pointer;
-      transition: background 0.3s, color 0.3s;
+      margin-bottom: 2rem;
+      animation: fadein 1.2s ease-in-out;
     }
+
+    .profile img {
+      width: 128px;
+      height: 128px;
+      border-radius: 50%;
+      border: 3px solid #00ccff;
+    }
+
+    .profile h1 {
+      margin: 0.5rem 0 0 0;
+    }
+
+    .profile p {
+      font-size: 1rem;
+      color: #ccc;
+    }
+
+    .links {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      width: 100%;
+      max-width: 400px;
+      animation: fadein 1.4s ease-in-out;
+    }
+
+    .link-button {
+      background: #111;
+      border: 2px solid #00ccff;
+      padding: 1rem;
+      border-radius: 10px;
+      text-align: center;
+      text-decoration: none;
+      color: white;
+      font-size: 1.1rem;
+      font-weight: bold;
+      transition: all 0.25s ease;
+      box-shadow: 0 0 6px #00ccff20;
+      cursor: pointer;
+      user-select: none;
+    }
+
     .link-button:hover {
       background: #00ccff;
       color: black;
+      transform: scale(1.05);
+      box-shadow: 0 0 12px #00ccff80;
     }
-    #adult-links {
-      margin-left: 1rem;
-      margin-top: 0.5rem;
+
+    .footer {
+      margin-top: 3rem;
+      padding: 1.5rem;
+      text-align: center;
+      color: #aaa;
+      font-size: 0.95rem;
+      border-top: 1px solid #333;
+      animation: fadein 1.6s ease-in-out;
+    }
+
+    .footer a {
+      color: #00ccff;
+      text-decoration: none;
+    }
+
+    .footer a:hover {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+
+    #adult-links, #games-links {
       display: none;
       flex-direction: column;
       gap: 0.5rem;
+      margin-top: 0.5rem;
+      padding-left: 1rem;
+      animation: fadein 0.4s ease-in-out;
+    }
+
+    #adult-links .link-button {
+      background: #220022;
+      border-color: #ff0099;
+      font-size: 1rem;
+    }
+
+    #games-links .link-button {
+      background: #002222;
+      border-color: #00ffaa;
+      font-size: 1rem;
+    }
+
+    @keyframes fadein {
+      from { opacity: 0; transform: translateY(10px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @media screen and (max-width: 500px) {
+      .link-button {
+        font-size: 1rem;
+        padding: 0.9rem;
+      }
     }
   </style>
 </head>
 <body>
 
-  <a href="https://example.com/general1" class="link-button" target="_blank">General Link 1</a>
-  <a href="https://example.com/general2" class="link-button" target="_blank">General Link 2</a>
+  <div class="profile">
+    <img src="https://avatars.githubusercontent.com/u/9919?s=280&v=4" alt="Avatar" />
+    <h1>Stormrider</h1>
+    <p>Game dev, streamer, coder, creator ⚡</p>
+  </div>
 
-  <a href="#" class="link-button" id="adult-toggle">🔞 Adults Only</a>
+  <div class="links">
+    <a class="link-button" href="https://github.com/dvaboi" target="_blank">💻 GitHub Projects</a>
+    <a class="link-button" href="https://www.youtube.com/@FollowDVaBoi" target="_blank">📺 YouTube Channel</a>
+    <a class="link-button" href="https://www.fortnite.com/@miskomega" target="_blank">🎮 Fortnite Content</a>
+    <a class="link-button" href="https://kick.com/dvaboi" target="_blank">🎥 Live Stream</a>
+    <a class="link-button" href="https://www.paypal.com/paypalme/dvaboi" target="_blank">💸 Support / Dev Logs</a>
 
-  <div id="adult-links">
-    <a href="https://example.com/adult1" class="link-button" target="_blank">🔥 Exclusive Gallery</a>
-    <a href="https://example.com/adult2" class="link-button" target="_blank">👀 Behind the Scenes</a>
+    <div class="link-button" id="adult-toggle">🔞 Adults Only</div>
+    <div id="adult-links">
+      <a class="link-button" href="https://example.com/adult1" target="_blank">🔥 Exclusive Gallery</a>
+      <a class="link-button" href="https://example.com/adult2" target="_blank">👀 Behind the Scenes</a>
+    </div>
+
+    <div class="link-button" id="games-toggle">🎮 Games</div>
+    <div id="games-links">
+      <a class="link-button" href="https://example.com/game1" target="_blank">🚀 Space Adventure</a>
+      <a class="link-button" href="https://example.com/game2" target="_blank">🕹️ Retro Arcade</a>
+      <a class="link-button" href="https://example.com/game3" target="_blank">⚔️ Dungeon Quest</a>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>
+      ⚡️ Built with ❤️ by <strong>DVaBoi</strong> | 💀 Powered by
+      <a href="https://miskomega.com" target="_blank"><strong>MiskOmega</strong></a>
+    </p>
+    <p>
+      📬 Contact: <a href="mailto:contact@miskomega.com">contact@miskomega.com</a>
+    </p>
+    <p style="font-size: 0.8rem; color: #666;">© 2025 MiskOmega Productions. All rights reserved.</p>
   </div>
 
   <script>
     let adultConfirmed = false;
 
-    // On page load, check localStorage
+    // Check localStorage for adult confirmation on load
     window.addEventListener('DOMContentLoaded', () => {
       if (localStorage.getItem('adultConfirmed') === 'true') {
         adultConfirmed = true;
       }
     });
 
-    document.getElementById('adult-toggle').addEventListener('click', function(e) {
-      e.preventDefault();
-
+    // Adult-only toggle button
+    document.getElementById('adult-toggle').addEventListener('click', () => {
       if (!adultConfirmed) {
         const isAdult = confirm("This section contains adult-only content.\nAre you 18 years or older?");
         if (!isAdult) {
@@ -73,11 +187,13 @@
       }
 
       const adultLinks = document.getElementById('adult-links');
-      if (adultLinks.style.display === 'none' || adultLinks.style.display === '') {
-        adultLinks.style.display = 'flex';
-      } else {
-        adultLinks.style.display = 'none';
-      }
+      adultLinks.style.display = (adultLinks.style.display === 'flex') ? 'none' : 'flex';
+    });
+
+    // Games dropdown toggle (no age check)
+    document.getElementById('games-toggle').addEventListener('click', () => {
+      const gamesLinks = document.getElementById('games-links');
+      gamesLinks.style.display = (gamesLinks.style.display === 'flex') ? 'none' : 'flex';
     });
   </script>
 
